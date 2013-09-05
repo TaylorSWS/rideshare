@@ -1,5 +1,5 @@
-application: ridesharebeta
-version: 3
+application: ridetugether
+version: 1
 runtime: python
 api_version: 1
 

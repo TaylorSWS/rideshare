@@ -1,7 +1,7 @@
 # This is actually the development one.
 # lutherrideshare.appspot key: ABQIAAAAg9WbCE_zwMIRW7jDFE_3ixS0LiYWImofzW4gd3oCqtkHKt0IaBT-STdq-gdH-mW2_ejMPXqxnfJjgw
 
-# This has the app id of ridesharebeta   and is also on ridesharebeta.appspot.com
+# This has the app id of ridetugether   and is also on ridetugether.appspot.com
 # rideshare.luther.edu key:  ABQIAAAAg9WbCE_zwMIRW7jDFE_3ixQ2JlMNfqnGb2qqWZtmZLchh1TSjRS0zuchuhlR8g4tlMGrjg34sNmyjQ
 #!/usr/bin/env python2.5
 #
@@ -55,8 +55,8 @@ from model import *
 
 
 MAP_APIKEY=""
-FROM_EMAIL_ADDR="ridesharedecorah@gmail.com"
-NOTIFY_EMAIL_ADDR="ridesharedecorah@gmail.com"
+FROM_EMAIL_ADDR="taylorusws@gmail.com"
+NOTIFY_EMAIL_ADDR="taylorusws@gmail.com"
 rideshareWebsite = "http://www.decorahrideshare.com"
 
 early_late_strings = { "0": "Early", "1": "Late" }
@@ -69,7 +69,8 @@ if aquery.count()==0:
   # live site   
    #college = College(name ="Luther College", address= "700 College Drive Decorah,IA", lat =43.313059, lng=-91.799501, appId="284196238289386",appSecret="07e3ea3ffda4aa08f8c597bccd218e75")   
    #college = College(name= "LaCrosse University", address = "1725 State Street, La Crosse, WI", lat=43.812834, lng=-91.229022,appId="193298730706524",appSecret="44d7cce20524dc91bf7694376aff9e1d")
-   college = College(name="Decorah", address="Decorah, IA", appId="177023452434948", appSecret="81a9f8776108bd1f216970823458533d", lat=43.303306, lng=-91.785709)
+   #college = College(name="Decorah", address="Decorah, IA", appId="177023452434948", appSecret="81a9f8776108bd1f216970823458533d", lat=43.303306, lng=-91.785709)
+   college = College(name="Taylor", address="Upland, IN", appId="573350249394078", appSecret="3a3831b1880fefa721efcc520bceebd9", lat=40.459406, lng=-85.497152)
    college.put()
  
 

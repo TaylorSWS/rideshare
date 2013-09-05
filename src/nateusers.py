@@ -30,13 +30,15 @@ from google.appengine.ext.webapp import util
 #FACEBOOK_APP_ID = "206075606121536" # for beta site
 #FACEBOOK_APP_ID = "284196238289386"  # for live site
 #FACEBOOK_APP_ID =  "177023452434948" # for Decorah site
-FACEBOOK_APP_ID =  "417443711648291" # for Decorah alerts
+#FACEBOOK_APP_ID =  "417443711648291" # for Decorah alerts
+FACEBOOK_APP_ID =  "573350249394078" # for Taylor University Site
 
 #FACEBOOK_APP_SECRET = "44d7cce20524dc91bf7694376aff9e1d" # for localhost
 #FACEBOOK_APP_SECRET = "2c4151f8959ea75522b49ea6ccbb1469" # for beta
 #FACEBOOK_APP_SECRET = "07e3ea3ffda4aa08f8c597bccd218e75"  # for live site
 #FACEBOOK_APP_SECRET = "81a9f8776108bd1f216970823458533d" #for Decorah site
-FACEBOOK_APP_SECRET = "2956b8e4d631cf8590ee0959f8b98f66" #for Decorah alerts
+#FACEBOOK_APP_SECRET = "2956b8e4d631cf8590ee0959f8b98f66" #for Decorah alerts
+FACEBOOK_APP_SECRET = "3a3831b1880fefa721efcc520bceebd9" # for Taylor University Site
 
 from google.appengine.dist import use_library
 use_library('django', '1.2')
@@ -56,7 +58,7 @@ class User():
 def create_logout_url(token):
     return '/auth/logout'
         
-def create_login_url():
+def create_loginlogin_url():
     return '/auth/login'
 
 class FBUser(db.Model):

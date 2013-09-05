@@ -19,7 +19,8 @@ var directionsDisplay;
 
 //var mycollege = new College("Luther College","700 College Drive Decorah,IA",43.313059,-91.799501);
 //var mycollege = new College("UW-LaCrosse","1725 State Street, La Crosse, WI",43.812834,-91.229022);
-var mycollege = new College("Decorah","Decorah, IA",43.303306,-91.785709);
+//var mycollege = new College("Decorah","Decorah, IA",43.303306,-91.785709);
+var mycollege = new College("Taylor","Upland, IN",40.459406,-85.497152);
 
 function initialize(mess) 
 {
