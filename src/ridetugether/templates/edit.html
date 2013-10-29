@@ -1,0 +1,81 @@
+{% extends "_notIndex.html" %}
+
+{% block title %}Ride TUgether | Edit Ride{% endblock %}
+
+{% block bodycontent %}
+
+<h2>Edit this Ride</h2>
+<div id='formContainer'>
+<form method="post" action="/applyedits">
+
+<ol id='formLeft'>
+<li>
+	<p>Starting Point: {{ride.start_point_title}}</p>
+</li>
+<li>
+<p>Ending Point: {{ride.destination_title}}</p>
+</li>
+<li>
+<p>Time: 
+<select name="earlylate" id="earlylate">
+<option value="0" 
+{% ifequal earlylate "Early" %}
+selected="true"
+{% endifequal %}
+>Early</option>
+<option value="1" 
+{% ifequal earlylate "Late" %}
+selected="true"
+{% endifequal %}
+>Late</option>
+</select>
+
+<select name="partofday" id="partofday">
+<option value="0"
+{% ifequal mae "Morning" %}
+selected="true"
+{% endifequal %}
+>
+Morning</option>
+<option value="1"
+{% ifequal mae "Afternoon" %}
+selected="true"
+{% endifequal %}
+>
+Afternoon</option>
+<option value="2"
+{% ifequal mae "Evening" %}
+selected="true"
+{% endifequal %}
+>
+Evening</option>
+</select>
+{{ride.ToD|date:"M d Y" }}</p>
+</li>
+<li>
+<p>Contact Number: <input type="text" name="contact" value="{{ride.contact}}"></P>
+</li>
+</ol>
+<ol id='formRight'>
+<li>
+<p>Comments: <input type="text" name="ridecomment" value="{{ride.comment}}" style='margin:0 0 0 70px;'></p>
+</li>
+<li>
+<p>Maximum Passengers<input type="text" name="numpass" value="{{ride.max_passengers}}"></p>
+</li>
+<li>
+<p>Passengers:<br />
+{% for p in plist %}
+{{p.nickname}} <br />
+{% endfor %}
+</p>
+</li>
+</ol>
+
+<input type="hidden" name="key" value="{{ride.key}}">
+<p><input type="button" class='submitButton' name="delete" value="Delete Ride" onclick="if(confirm('Are you sure you want to delete this ride?')) location.href='/deleteride?key={{ ride.key }}'" > 
+<input type="submit" class='submitButton' name="submit" value="Apply Changes"></p>
+
+</form>
+</div>
+{% endblock %}

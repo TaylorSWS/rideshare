@@ -1,0 +1,26 @@
+{% extends "_notIndex.html" %}
+
+{% block title %}Ride TUgether | {{ user }}{% endblock %}
+
+{% block bodycontent %}
+<div class='rating'>
+{% if ratingslist %}
+<h2>{{name}} has been rated by {{numrates}} passenger(s),and has an average rating of {{rating}}/5</h2>
+
+ 
+<p>See what other users had to say about their experience with {{name}}:</p>
+<table class='detailTables'>
+<tr><th>Comments</tr></th>
+{% for comment in ratingslist %}
+
+<tr><td>{{comment}}</td>
+</tr>
+{% endfor %}
+</table>
+
+{% else %}
+	<p> This driver has not been rated yet.</p>
+{% endif %}
+</div>
+{% endblock %}
+

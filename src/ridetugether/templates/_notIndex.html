@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+    <head>
+		<link rel="icon" type="image/png" href="static/favicon.ico">
+        <link href="static/style.css" media="screen" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+        <title>{% block title %}Taylor RideShare{% endblock %}</title>
+        {% block head %}{% endblock %}
+    </head>
+	<div id="container">
+    <body {% block onLoadText %}{% endblock %}>
+        <div id="titleblock">
+            <h1 id="collegeName"><a href ='/'>Taylor University Rideshare</a></h1>
+            <div id="navbar">
+                <ul>
+                    <li>
+                        Welcome, {{nick}}
+                    </li>
+                    <li>
+                        <a href="{{logout}}" id="logout">Sign Out</a>
+                    </li>
+                    <li>
+                        <a href="/home" id="home">Your Rides</a>
+                    </li>
+                    <li>
+                        <a href="/" id="helpLink">Map</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    <div id="templateBlock">
+        {% block bodycontent %} {% endblock %}
+    </div>
+	</body>
+	</div>
+    <div id="mainfooter">
+        <p>Developed in collaboration by Luther College and Taylor University
+            Software Studio</p>
+    </div>
+	
+</body>
+</html>

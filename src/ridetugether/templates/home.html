@@ -1,0 +1,101 @@
+{% extends "_notIndex.html" %}
+
+{% block title %}Ride TUgether | Rides{% endblock %}
+
+{% block bodycontent %}
+<div class="detailTables">
+
+{% if driverides %}
+
+<h2>You are a driver for the following rides:</h2>
+{% for ride in driverides %}
+<!--Currently not working - <a href='/rideinfo?key={{ ride.key }}'>See Map of Ride</a-->
+<table>
+<tr><th>From</th>
+    <th>To</th>
+    <th>Driver</th>
+    <th>Departing</th>
+    <th>Contact</th>
+    <th>Modify</th>
+</tr>
+<tr><td>{{ ride.start_point_title }}</td>
+    <td>{{ ride.destination_title }}</td>
+    <td>{{ nick }}</td>
+    <td>{{ ride.part_of_day }}<br />{{ ride.jsmonth }}-{{ ride.jsday }}-{{ ride.jsyear }}</td>
+    <td>{{ ride.contact }}</td>
+    <td><input type="button" class='submitButton' value="Edit" onclick="location.href='/editride?key={{ ride.key }}'" /></td>
+</tr></table>
+
+
+{% if ride.passengerobjects %}
+<h4>Passengers</h4>
+<table>
+<tr><th>Name</th>
+    <th>
+    {% ifequal ride.doOrPu 0 %}Drop Off Location
+    {% else %}Pick Up Location{% endifequal %}</th>
+    <th>Contact</th>
+    <th>Modify</th>
+</tr>
+{% for p in ride.passengerobjects %}
+<tr><td>{{ p.fullname }}</td>
+    <td>{{ p.location }}</td>
+    <td>{{ p.contact }}</td>
+    <td><input type="button" class='submitButton' value="Remove" onclick="if(confirm('Are you sure you want to remove {{ p.name }} from this ride?')) location.href='/removepassenger?rkey={{ ride.key }}&pkey={{ p.key }}'" /></td>
+</tr>
+{% endfor %}
+</table>
+{% else %}<pz>There are no passengers registered for this ride.</p>
+{% endif %}<hr>
+{% endfor %}
+{% else %}<p>You are not a driver for any rides.</p>
+{% endif %}
+</div>
+
+<div class="detailTables">
+{% if passengerrides %}
+<h2>You are a passenger for the following rides:</h2>
+{% for ride in passengerrides %}
+<!--Current Not Working a href='/rideinfo?key={{ ride.key }}'>See Map of Ride</a-->
+<table>
+<tr><th>From</th>
+    <th>To</th>
+    <th>Driver</th>
+    <th>Departing</th>
+    <th>Contact</th>
+    <th>Modify</th>
+</tr>
+<tr><td>{{ ride.start_point_title }}</td>
+    <td>{{ ride.destination_title }}</td>
+    <td>{{ ride.drivername }}<br /> <a href='/ratedriver?dkey={{ride.driver}}'> Rate Your Driver</a></td>
+    <td>{{ ride.part_of_day }}<br />{{ ride.jsmonth }}-{{ ride.jsday }}-{{ ride.jsyear }}<td>
+    <td>{{ ride.contact }}</td>
+    <td><input type='button' class='submitButton' value='Delete' disabled='disabled' /></td>
+</tr></table>
+
+{% if ride.passengerobjects %}
+<h3>Passengers</h3>
+<table>
+<tr><th>Name</th>
+    <th>
+    {% ifequal ride.doOrPu 0 %}Drop Off Location
+    {% else %}Pick Up Location{% endifequal %}</th>
+    <th>Contact</th>
+    <th>Modify</th>
+</tr>
+{% for p in ride.passengerobjects %}
+<tr><td>{{ p.fullname }}</td>
+    <td>{{ p.location }}</td>
+    <td>{{ p.contact }}</td>
+    <td><input type="button" class='submitButton' value="Remove" {% ifnotequal p.fullname user %}disabled='disabled'{% endifnotequal %} onclick="if(confirm('Are you sure you want to remove yourself from this ride?')) location.href='/removepassenger?rkey={{ ride.key }}&pkey={{ p.key }}'" /></td>
+</tr>
+{% endfor %}
+</table>
+{% else %}<p>There are no passengers registered for this ride.</p>
+{% endif %}
+{% if not forloop.last %}<hr>{% endif %}
+{% endfor %}
+{% else %}<p>You are not a passenger for any rides.</p>
+{% endif %}
+</div>
+{% endblock %}
