@@ -19,7 +19,7 @@ h1
 {
 
 	min-height: 100%;
-	margin-bottom: -65px;
+	/*margin-bottom: -65px;*/
 	position: relative;
 	
 }
@@ -59,7 +59,7 @@ h1
 
 #mainfooter
 {
-
+	clear:both;
 	font-family: 'open_sanslight', Arial, sans-serif; 
     height:49px;
     background:#4C75AE;
@@ -449,17 +449,8 @@ footer
 	font-family: 'open_sanslight', Arial, sans-serif;
     text-align:center;
     margin: 0 auto;
-    width:80%;
+    width:75%;
     
-}
-
-.detailTables table
-{
-	font-family: Arial, sans-serif!important;
-	font-size:14px;
-	margin: 0 0 2% 0;
-	color: #414141;
-	
 }
 
 #templateBlock h2
@@ -577,6 +568,125 @@ ol li
 {
 
 	margin: 30px 0 0 0;
+	
+}
+
+.rideTable
+{
+
+	background-color: #A5A1A1;
+	
+}
+
+.itinerary
+{
+
+	width:950px;
+	
+}
+
+.driverIcon
+{
+
+	height: 150px;
+	width: 150px;
+	background-color: #333333;
+	float: left;
+	
+}
+
+.driverIcon h1
+{
+
+	margin:20% 0 0 0;
+	color: #FFF!important;
+	
+}
+
+.driverIcon h3
+{
+
+	color: #FFF!important;
+	
+}
+
+.driverIcon:hover > .intineraryBar
+{
+
+	-webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+	background-color: #B9B9B9;
+	
+}
+
+.itineraryBar
+{
+
+	-webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+	height: 150px;
+	background-color: #dfdfdf;
+	width: 800px;
+	float: left;
+	overflow:hidden;
+	margin: 0 0 5px 0;
+
+}
+
+.itineraryBar:hover
+{
+
+	-webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+	background-color: #B9B9B9;
+
+
+}
+
+.itineraryBar h3, .itineraryBar p
+{
+
+	color:#646363!important;
+	
+}
+
+.itineraryRow ul li
+{
+
+	list-style: none;
+	display: inline;
+	width: 25%;
+	float:left;
+	
+}
+
+.square{
+
+	width:50%;
+	float:left;
+	max-height:56px;
+	
+}
+
+.square h2
+{
+
+	margin: 3%;
+	float: left;
+	
+}
+
+.square p
+{
+	color:#646363!important;
+	float: left;
+	margin: 5% 0 0 0;
+	max-width:290px;
+	font-size: 14px;
+	margin: 20px 0 0 0;
 	
 }
 
